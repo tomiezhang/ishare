@@ -1,0 +1,144 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <title>ishare example</title>
+  <meta name="Generator" content="EditPlus">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <style>
+  .imp {color:red}
+.wraps {width:90%;margin:20px auto;line-height:22px;}
+  </style>
+ </head>
+
+ <body>
+  <script src="ishare_min.js"></script>
+  <div class="wraps">
+  <h1>ishare example</h1>
+  <br>
+  <dl>
+	<dt>ishare基本参数说明</dt>
+	<dd class="imp">*mod:<b>模式(0->图标式,1->悬浮右侧,2->悬浮左侧)</b></dd>
+	<dd class="imp">*icon:<b>图标大小(0->小,1->中,2->大)</b></dd>
+	<dd class="imp">*share:<b>分享到哪些社交站点,采用数组形式,数组可增删，图标符号按数组顺序出现，最少必须保留一项(tsina->新浪微博,tqq->腾讯微博,QQ->QQ,qzone->QQ空间,qqmail->qq邮箱,kaixin001->开心网,renren->人人网,weixin->微信朋友圈,fb->facebook,twitter->twitter)</b></dd>
+	<dd class="imp">*top:<b>悬浮式必须，菜单距离浏览器顶部距离如150px</b></dd>
+	<dd class="imp">*bgStyle:<b>悬浮式必须,菜单配色，目前提供8种颜色(blue,black,gray,blues,green,org,red,pink)</b></dd>
+	<dd>*isShowTime:<b>是否显示分享次数，无此参数则默认不显示</b></dd>
+	<dd>*shareword:<b>指定分享内容，无此参数则默认抓取title内容</b></dd>
+	<dd>*shareurl:<b>指定分享的url地址,无此参数默认分享页面url</b></dd>
+	<dd>*sharepic:<b>指定分享的图片地址，无此参数则默认抓取本页宽高大于150px的第一张图</b></dd>
+	<dd>*ContentId:<b>ishare出现的位置，无此参数则代码在什么位置ishare就显示在此处</b></dd>
+	<dd class="imp">红色为必选项</dd>
+  </dl>
+  <hr/>
+  <h2>1.基本用法:</h2>
+  <br>
+  <script>
+	iShareNew({
+			"mod":0,
+			"icon":2,
+			"share":["tsina","tqq","QQ","qzone","mail","kaixin001","renren","fb","twitter","weixin"]
+		});
+	</script>
+  <pre><code>
+  &lt;script&gt;
+	iShareNew({
+			"mod":0,
+			"icon":2,
+			"share":["tsina","tqq","QQ","qzone","mail","kaixin001","renren","fb","twitter","weixin"]
+	});
+ &lt;/script&gt;
+  </code></pre>
+   <h2>2.指定分享内容&显示分享次数:</h2>
+  <br>
+  <script>
+	iShareNew({
+				"mod":0,
+				"icon":2,
+				"share":["tsina","QQ","tqq","qzone"],
+				"shareword":"ishare腾讯网UED出品社会化分享插件",
+				"isShowTime":true,
+				"shareurl":"http://www.qq.com/",
+                 "sharepic":"http://mat1.gtimg.com/joke/tomiezhang/ishare/t.png"
+			});
+	</script>
+  <pre><code>
+  &lt;script&gt;
+	iShareNew({
+				"mod":0,
+				"icon":2,
+				"share":["tsina","QQ","tqq","qzone"],
+				"shareword":"ishare腾讯网UED出品社会化分享插件",
+				"isShowTime":true,
+				"shareurl":"http://www.qq.com/",
+                                "sharepic":"http://mat1.gtimg.com/joke/tomiezhang/ishare/t.png"
+			});
+ &lt;/script&gt;
+  </code></pre>
+    <h2>3.悬浮式右侧&修改icon次序:</h2>
+  <br>
+  <script>
+	iShareNew({
+				"mod":1,
+				"icon":1,
+				"top":"150px",
+				"bgStyle":"green",
+				"share":["kaixin001","QQ","qzone","tsina","tqq","mail","renren","fb"],
+				"shareword":"ishare腾讯网UED出品社会化分享插件",
+				"isShowTime":true,
+				"shareurl":"http://www.qq.com/",
+                 "sharepic":"http://mat1.gtimg.com/joke/tomiezhang/ishare/t.png"
+			});
+	</script>
+  <pre><code>
+  &lt;script&gt;
+	iShareNew({
+				"mod":1,
+				"icon":1,
+				"top":"150px",
+				"bgStyle":"green",
+				"share":["kaixin001","QQ","qzone","tsina","tqq","mail","renren","fb"],
+				"shareword":"ishare腾讯网UED出品社会化分享插件",
+				"isShowTime":true,
+				"shareurl":"http://www.qq.com/",
+                 "sharepic":"http://mat1.gtimg.com/joke/tomiezhang/ishare/t.png"
+			});
+ &lt;/script&gt;
+  </code></pre>
+
+   <h2>4.将图标按钮显示到指定容器:</h2>
+   <div id="ishareWraps" style="width:80%;border:3px dashed #ccc;margin:20px auto;padding:20px;"></div>
+  <br>
+  <script>
+	iShareNew({
+				"mod":0,
+				"icon":2,
+				"share":["tsina","tqq","QQ","qzone","mail","kaixin001","renren","fb","twitter","weixin"],
+				"shareword":"ishare腾讯网UED出品社会化分享插件",
+				"isShowTime":true,
+				"shareurl":"http://www.qq.com/",
+                 "sharepic":"http://mat1.gtimg.com/joke/tomiezhang/ishare/t.png",
+				"ContentId":"ishareWraps"
+			});
+	</script>
+  <pre><code>
+  &lt;div id="ishareWraps" style="width:80%;border:3px dashed #ccc;margin:20px auto;padding:20px;"&gt;&lt;/div&gt;
+  &lt;script&gt;
+	iShareNew({
+				"mod":0,
+				"icon":2,
+				"share":["tsina","tqq","QQ","qzone","mail","kaixin001","renren","fb","twitter","weixin"],
+				"shareword":"ishare腾讯网UED出品社会化分享插件",
+				"isShowTime":true,
+				"shareurl":"http://www.qq.com/",
+                 "sharepic":"http://mat1.gtimg.com/joke/tomiezhang/ishare/t.png",
+				"ContentId":"ishareWraps"
+			});
+ &lt;/script&gt;
+  </code></pre>
+  </div>
+
+
+ </body>
+</html>
