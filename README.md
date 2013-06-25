@@ -3,6 +3,7 @@ ishare
 
 作者：tomiezhang<br>
 联系：neil@vip.qq.com<br>
+blog:[tomiedev.sinaapp.com](http://tomiedev.sinaapp.com "tomiedev.sinaapp.com")
 
 ishare是一款基于社交网站分享的js工具，你可以在你网站页面添加ishare相关代码后，即可自由定制分享代码！
 
@@ -17,7 +18,8 @@ ishare是一款基于社交网站分享的js工具，你可以在你网站页面
 * 发布第一个版本，增加分享到QQ以及可以将分享按钮插入到指定DOM结构
 
 ###使用方法
-*引入ishare_min.js
+*引入[ishare_min.js](http://mat1.gtimg.com/joke/tomiezhang/ishare/ishare_min_v1.0.js "ishare_min.js")
+
 *基本用法：
 
 	iShareNew({
@@ -30,4 +32,4 @@ ishare是一款基于社交网站分享的js工具，你可以在你网站页面
 
 		});
 
-*详细使用方法见example.html
+*详细使用方法见[example.html](http://tomiedev.sinaapp.com/ishare/example.html "【example.html】")
