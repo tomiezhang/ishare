@@ -249,7 +249,7 @@
 								}
 								window.open(_this.interface[$j(this).attr("name")](o.word, o.url, o.pic), "木儷利ishare", "height=485, width=720,toolbar=no,menubar=no,scrollbars=no,resizable=yes,location=no,status=no,top=200,left=200");
 							} else {
-								window.open("http://s.jiathis.com/?webid=" + $j(this).attr("name") + "&url=" + encodeURIComponent(o.url) + "&title=" + encodeURIComponent(o.word) + "&uid=1626433&jid=1344496797938582", "木儷利ishare", "height=600, width=560,toolbar=no,menubar=no,scrollbars=no,resizable=yes,location=no,status=no,top=200,left=200");
+								window.open("http://s.jiathis.com/?webid=" + $j(this).attr("name") + "&url=" + encodeURIComponent(o.url) + "&title=" + encodeURIComponent(o.word) + "&uid=1626433&jid=1344496797938582&pic="+encodeURIComponent(o.pic) , "木儷利ishare", "height=600, width=560,toolbar=no,menubar=no,scrollbars=no,resizable=yes,location=no,status=no,top=200,left=200");
 							}
 						}
 						return false;
